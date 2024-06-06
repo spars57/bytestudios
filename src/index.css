@@ -1,0 +1,31 @@
+@font-face {
+  font-family: 'sora-bold';
+  src: url(./assets/Sora-Bold.ttf) format('woff');
+}
+
+@font-face {
+  font-family: 'sora-medium';
+  src: url(./assets/Sora-Medium.ttf) format('woff');
+}
+
+@font-face {
+  font-family: 'sora-semibold';
+  src: url(./assets/Sora-SemiBold.ttf) format('woff');
+}
+
+@font-face {
+  font-family: 'sora-regular';
+  src: url(./assets/Sora-Regular.ttf) format('woff');
+}
+
+@font-face {
+  font-family: 'sora-thin';
+  src: url(./assets/Sora-Thin.ttf) format('woff');
+}
+
+@font-face {
+  font-family: 'sora-light';
+  src: url(./assets/Sora-Light.ttf) format('woff');
+}
+
+
