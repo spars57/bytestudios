@@ -10,7 +10,6 @@ import React, { FC, ReactNode } from "react";
 
 import AddIcon from "@mui/icons-material/Add";
 import RemoveIcon from "@mui/icons-material/Remove";
-import { makeStyles } from "@mui/styles";
 
 type Props = {
   question: string;
@@ -18,21 +17,12 @@ type Props = {
   timeout?: number;
 } & BoxProps;
 
-const useStyles = makeStyles({
-  root: {
-    "&:hover": {
-      fontWeight: "bold",
-    },
-  },
-});
-
 const FrequentlyAskedQuestion: FC<Props> = ({
   question,
   response,
   timeout = 0,
   ...props
 }) => {
-  const classes = useStyles();
   const [open, setOpen] = React.useState(false);
   const onOpen = () => setOpen(true);
   const onClose = () => setOpen(false);
@@ -54,9 +44,7 @@ const FrequentlyAskedQuestion: FC<Props> = ({
           width="100%"
           py={1}
         >
-          <Typography className={classes.root} variant="h6">
-            {question}
-          </Typography>
+          <Typography variant="h6">{question}</Typography>
           <IconButton onClick={open ? onClose : onOpen}>
             {open ? (
               <RemoveIcon fontSize="small" />
