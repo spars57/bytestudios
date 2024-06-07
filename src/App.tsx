@@ -3,6 +3,7 @@ import {
   Button,
   Divider,
   Fade,
+  Grid,
   Grow,
   Link,
   Slide,
@@ -12,6 +13,15 @@ import {
 import FrequentlyAskedQuestion from "./components/faq";
 import Header from "./components/header";
 import HeaderLogo from "./components/logo";
+
+import AboutOurTeamSVG from "./assets/illustrations/About-Our-Team-1--Streamline-Free-Illustrations.svg";
+import BeingCreativeSVG from "./assets/illustrations/Being-Creative-1--Streamline-Free-Illustrations.svg";
+import ConversationBusinessCustomerSVG from "./assets/illustrations/Conversation-Businessman-Customer-1--Streamline-Free-Illustrations.svg";
+import DiversityUnitySVG from "./assets/illustrations/Online-Test-2--Streamline-Free-Illustrations.svg";
+import OrderCompletedSVG from "./assets/illustrations/Order-Completed-2--Streamline-Free-Illustrations.svg";
+import SmartPeopleSVG from "./assets/illustrations/Smart-People-1--Streamline-Free-Illustrations.svg";
+
+import Benefit from "./components/benefit";
 
 function App() {
   const theme = useTheme();
@@ -81,9 +91,70 @@ function App() {
           </Box>
         </Box>
       </Box>
+      {/* Benefits */}
+      <Box
+        p={5}
+        mt={5}
+        display="flex"
+        flexDirection="column"
+        alignItems={"center"}
+        width="100%"
+        justifyContent={"center"}
+      >
+        <Typography variant="h2">
+          Why should you chose <b>us</b>?
+        </Typography>
+        <Typography variant="h5" mt={2}>
+          Check our FAQs or <Link>book a call</Link>.
+        </Typography>
+      </Box>
+      <Box mt={5} px={5}>
+        <Grid container spacing={5}>
+          <Benefit
+            svg={AboutOurTeamSVG}
+            title={"Fixed Monthly Rates. No Surprises"}
+            message={
+              "Our pricing is clear and simple. We won't charge you more, neither surprise you with extra fees."
+            }
+          />
+          <Benefit
+            svg={BeingCreativeSVG}
+            title={"Flexible & Scalable"}
+            message={
+              "Scale up, or down, changing subscriptions if and when you need."
+            }
+          />
+          <Benefit
+            svg={ConversationBusinessCustomerSVG}
+            title={"High Quality Delivers"}
+            message={
+              "Top of the line quality development always at your fingertips, on demand."
+            }
+          />
+          <Benefit
+            svg={OrderCompletedSVG}
+            title={"Unlimited Requests"}
+            message={"Add as many request as you want to the queue."}
+          />
+          <Benefit
+            svg={DiversityUnitySVG}
+            title={"Unhappy with results? Money back"}
+            message={
+              "If our service is not what you were looking, within the first month, we will refund you."
+            }
+          />
+          <Benefit
+            svg={SmartPeopleSVG}
+            title={"Fast Delivery"}
+            message={
+              "We work as fast as we can, and typically fulfil tasks within 2-4 business days."
+            }
+          />
+        </Grid>
+      </Box>
       {/* Our Services */}
       <Box
-        mt={5}
+        mt={20}
         display="flex"
         width="100%"
         justifyContent={"center"}
