@@ -1,7 +1,6 @@
 {
   "homepage": "https://spars57.github.io/bytestudios",
   "name": "bytestudios",
-  "private": true,
   "version": "0.0.0",
   "type": "module",
   "scripts": {
@@ -10,8 +9,7 @@
     "build": "tsc && vite build",
     "lint": "eslint . --ext ts,tsx --report-unused-disable-directives --max-warnings 0",
     "preview": "vite preview",
-    "predeploy": "npm run build && npm run ad",
-    "ad": "echo 'bytestudios.dev > ./dist/CNAME",
+    "predeploy": "npm run build",
     "deploy": "gh-pages -d dist"
   },
   "dependencies": {
