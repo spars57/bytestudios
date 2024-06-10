@@ -92,22 +92,24 @@ function App() {
         </Box>
       </Box>
       {/* Benefits */}
-      <Box
-        p={5}
-        mt={5}
-        display="flex"
-        flexDirection="column"
-        alignItems={"center"}
-        width="100%"
-        justifyContent={"center"}
-      >
-        <Typography variant="h2">
-          Why should you chose <b>us</b>?
-        </Typography>
-        <Typography variant="h5" mt={2}>
-          Check our FAQs or <Link>book a call</Link>.
-        </Typography>
-      </Box>
+      <Fade in={true} timeout={1000}>
+        <Box
+          p={5}
+          mt={5}
+          display="flex"
+          flexDirection="column"
+          alignItems={"center"}
+          width="100%"
+          justifyContent={"center"}
+        >
+          <Typography variant="h2">
+            Why should you chose <b>us</b>?
+          </Typography>
+          <Typography variant="h5" mt={2}>
+            Check our FAQs or <Link>book a call</Link>.
+          </Typography>
+        </Box>
+      </Fade>
       <Box mt={5} px={5}>
         <Grid container spacing={5}>
           <Benefit
@@ -203,7 +205,7 @@ function App() {
               />
               <Divider />
               <FrequentlyAskedQuestion
-                timeout={2000}
+                timeout={1200}
                 question="Backend Development"
                 response={
                   <>
@@ -235,7 +237,7 @@ function App() {
               />
               <Divider />
               <FrequentlyAskedQuestion
-                timeout={3000}
+                timeout={1400}
                 question="Full-Stack App Development"
                 response={
                   <>
@@ -270,7 +272,7 @@ function App() {
               />
               <Divider />
               <FrequentlyAskedQuestion
-                timeout={4000}
+                timeout={1600}
                 question="UI/UX Design"
                 response={
                   <>
@@ -565,7 +567,7 @@ function App() {
       </Box>
       {/*Footer*/}
       <Box
-        mt={5}
+        mt={20}
         display={"flex"}
         flexDirection="column"
         alignItems={"center"}
@@ -679,7 +681,7 @@ function App() {
           borderTop="1px solid #9119F6"
         >
           <Typography variant="caption">
-            Copyright © 2024 <b>Bytestudios.Ltd.</b>
+            Copyright © 2022 <b>Bytestudios.Ltd.</b>
           </Typography>
         </Box>
       </Box>
