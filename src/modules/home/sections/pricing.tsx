@@ -7,6 +7,7 @@ const Pricing: FC = () => {
   return (
     <>
       <Box
+        id="pricing"
         mt={5}
         p={5}
         display="flex"
