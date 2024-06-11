@@ -1,12 +1,12 @@
-import { AppBar, Box, Container, Toolbar } from "@mui/material";
+import { AppBar, Box, BoxProps, Container, Toolbar } from "@mui/material";
 import { FC } from "react";
 import HeaderLogo from "../logo";
 
 //bgcolor="#200C74" height={75}
-type HeaderProps = {
+interface HeaderProps extends BoxProps {
   onImageClick: () => unknown;
-};
-const Header: FC<HeaderProps> = ({ onImageClick }) => {
+}
+const Header: FC<HeaderProps> = ({ onImageClick, ...props }) => {
   return (
     <AppBar position="static">
       <Container maxWidth="xl">
@@ -17,6 +17,7 @@ const Header: FC<HeaderProps> = ({ onImageClick }) => {
             alignItems="center"
             width="100%"
             justifyContent={"space-between"}
+            {...props}
           >
             <HeaderLogo
               onClick={onImageClick}
