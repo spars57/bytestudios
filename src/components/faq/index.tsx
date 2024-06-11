@@ -30,6 +30,7 @@ const FrequentlyAskedQuestion: FC<Props> = ({
     <Box
       onClick={open ? onClose : onOpen}
       p={1}
+      alignItems={"center"}
       display="flex"
       flexDirection="column"
       width="100%"
@@ -38,11 +39,11 @@ const FrequentlyAskedQuestion: FC<Props> = ({
     >
       <Slide direction="left" in={true} timeout={timeout}>
         <Box
+          p={1}
           display="flex"
           alignItems="center"
           justifyContent={"space-between"}
           width="100%"
-          py={1}
         >
           <Typography variant="h6">{question}</Typography>
           <IconButton onClick={open ? onClose : onOpen}>
@@ -55,7 +56,7 @@ const FrequentlyAskedQuestion: FC<Props> = ({
         </Box>
       </Slide>
       <Collapse in={open}>
-        <Box my={2}>
+        <Box p={1}>
           <Typography variant="body2">{response}</Typography>
         </Box>
       </Collapse>

@@ -1,4 +1,4 @@
-import { Box, Divider, Grid, Link, Typography, useTheme } from "@mui/material";
+import { Box, Grid, Link, Typography, useTheme } from "@mui/material";
 import { FC } from "react";
 import FrequentlyAskedQuestion from "../../../components/faq";
 import scrollElementToViewById from "../../../utils/scroll-element-to-view";
@@ -44,7 +44,7 @@ const FAQs: FC = () => {
       <Grid container justifyContent={"center"} mt={4}>
         <Grid item sm={0} md={3}></Grid>
         <Grid item sm={12} md={6}>
-          <Grid container spacing={2} p={1}>
+          <Grid container p={1}>
             <Grid item md={12} sm={12}>
               <FrequentlyAskedQuestion
                 question="Why not just hire a full-time developer?"
@@ -62,21 +62,18 @@ const FAQs: FC = () => {
                   </>
                 }
               />
-              <Divider />
             </Grid>
             <Grid item md={12} sm={12}>
               <FrequentlyAskedQuestion
                 question="What tools are used to communicate?"
                 response="The main tools we use are Microsoft Teams and Jira. Microsoft Teams will be used for communication with our founder, who can answer any questions you have about what's going on, or how things work. Jira will be used for all the task management."
               />
-              <Divider />
             </Grid>
             <Grid item md={12} sm={12}>
               <FrequentlyAskedQuestion
                 question="How does 24/7 support work?"
                 response="You can reach out to our team, including our founder, directly through Slack, Teams, or whatever communication tool you prefer. All of us are developers and we're here to help with any questions you have about the project's status, what's going on, or anything else. If you'd like, we can also set up a call to discuss things in more detail."
               />
-              <Divider />
             </Grid>
             <Grid item md={12} sm={12}>
               <FrequentlyAskedQuestion
@@ -93,7 +90,6 @@ const FAQs: FC = () => {
                   </>
                 }
               />
-              <Divider />
             </Grid>
             <Grid item md={12} sm={12}>
               <FrequentlyAskedQuestion
@@ -110,21 +106,18 @@ const FAQs: FC = () => {
                   </>
                 }
               />
-              <Divider />
             </Grid>
             <Grid item md={12} sm={12}>
               <FrequentlyAskedQuestion
                 question="What if I don't like the work?"
                 response="Don't worry! We will revise the work until you're completely satisfied"
               />
-              <Divider />
             </Grid>
             <Grid item md={12} sm={12}>
               <FrequentlyAskedQuestion
                 question="What if I just need one task done?"
                 response="You can pause your subscription once the work is complete, and save the remainder of your subscription for the future when you have some more work."
               />
-              <Divider />
             </Grid>
             <Grid item md={12} sm={12}>
               <FrequentlyAskedQuestion
