@@ -25,18 +25,16 @@ import Benefit from "./components/benefit";
 
 function App() {
   const theme = useTheme();
-  const setTag = (tag: string) => () => {
-    const url = new URL(window.location.href);
-    url.hash = tag.startsWith("#") ? tag : `#${tag}`;
-    window.location.href = url.toString();
+  const scrollToView = (tag: string) => () => {
+    const element = document.getElementById(tag);
+    element?.scrollIntoView({ block: "start", behavior: "smooth" });
   };
 
   return (
     <Box>
-      <a href="#home" />
-      <Header onImageClick={setTag("home")} />
-      {/*First Section*/}
       <section id="home" />
+      <Header onImageClick={scrollToView("home")} />
+      {/*First Section*/}
       <Box
         mt={3}
         height={450}
@@ -49,7 +47,8 @@ function App() {
           <Slide direction="right" in={true} timeout={1000}>
             <Typography variant="h3">
               <Box display="flex">
-                <div style={{ opacity: 0.6 }}>We help</div>&nbsp;<b>startups</b>
+                <div style={{ opacity: 0.6 }}>We help</div>&nbsp;
+                <b>startups</b>
               </Box>
               <Box display="flex">
                 <div>design, develop &</div>&nbsp;
@@ -82,7 +81,7 @@ function App() {
                   sx={{ width: 200 }}
                   variant="contained"
                   color="inherit"
-                  onClick={setTag("twist")}
+                  onClick={scrollToView("twist")}
                 >
                   What is the twist?
                 </Button>
@@ -110,68 +109,64 @@ function App() {
           </Typography>
         </Box>
       </Fade>
-      <Box mt={5} px={5}>
-        <Grid container spacing={5}>
-          <Benefit
-            svg={AboutOurTeamSVG}
-            title={"Fixed Monthly Rates. No Surprises"}
-            message={
-              "Our pricing is clear and simple. We won't charge you more, neither surprise you with extra fees."
-            }
-          />
-          <Benefit
-            svg={BeingCreativeSVG}
-            title={"Flexible & Scalable"}
-            message={
-              "Scale up, or down, changing subscriptions if and when you need."
-            }
-          />
-          <Benefit
-            svg={ConversationBusinessCustomerSVG}
-            title={"High Quality Delivers"}
-            message={
-              "Top of the line quality development always at your fingertips, on demand."
-            }
-          />
-          <Benefit
-            svg={OrderCompletedSVG}
-            title={"Unlimited Requests"}
-            message={"Add as many request as you want to the queue."}
-          />
-          <Benefit
-            svg={DiversityUnitySVG}
-            title={"Unhappy with results? Money back"}
-            message={
-              "If our service is not what you were looking, within the first month, we will refund you."
-            }
-          />
-          <Benefit
-            svg={SmartPeopleSVG}
-            title={"Fast Delivery"}
-            message={
-              "We work as fast as we can, and typically fulfil tasks within 2-4 business days."
-            }
-          />
-        </Grid>
-      </Box>
+      <section id="twist" />
+      <Grid container spacing={5} mt={5} px={5}>
+        <Benefit
+          svg={AboutOurTeamSVG}
+          title={"Fixed Monthly Rates. No Surprises"}
+          message={
+            "Our pricing is clear and simple. We won't charge you more, neither surprise you with extra fees."
+          }
+        />
+        <Benefit
+          svg={BeingCreativeSVG}
+          title={"Flexible & Scalable"}
+          message={
+            "Scale up, or down, changing subscriptions if and when you need."
+          }
+        />
+        <Benefit
+          svg={ConversationBusinessCustomerSVG}
+          title={"High Quality Delivers"}
+          message={
+            "Top of the line quality development always at your fingertips, on demand."
+          }
+        />
+        <Benefit
+          svg={OrderCompletedSVG}
+          title={"Unlimited Requests"}
+          message={"Add as many request as you want to the queue."}
+        />
+        <Benefit
+          svg={DiversityUnitySVG}
+          title={"Unhappy with results? Money back"}
+          message={
+            "If our service is not what you were looking, within the first month, we will refund you."
+          }
+        />
+        <Benefit
+          svg={SmartPeopleSVG}
+          title={"Fast Delivery"}
+          message={
+            "We work as fast as we can, and typically fulfil tasks within 2-4 business days."
+          }
+        />
+      </Grid>
+
       {/* Our Services */}
-      <Box
-        mt={20}
-        display="flex"
-        width="100%"
-        justifyContent={"center"}
-        p={1}
-        px={5}
-      >
-        <Box display="flex" width="60%">
+      <Grid container mt={20}>
+        <Grid item md={3} sm={12}>
           <Fade in={true} timeout={1000}>
-            <Typography variant="h4">
-              Our <b>Services</b>
-            </Typography>
+            <Box p={2}>
+              <Typography variant="h4" textAlign="right">
+                Our <b>Services</b>
+              </Typography>
+            </Box>
           </Fade>
+        </Grid>
+        <Grid item md={6} sm={12}>
           <Box
             mx={2}
-            width={"80%"}
             borderRadius={4}
             border={`1px solid ${theme.palette.primary.main}`}
           >
@@ -294,11 +289,13 @@ function App() {
               />
             </Box>
           </Box>
-        </Box>
-      </Box>
+        </Grid>
+      </Grid>
+
       {/*Pricing?*/}
       <Box
-        mt={10}
+        mt={5}
+        p={5}
         display="flex"
         flexDirection={"column"}
         justifyContent={"center"}
@@ -311,144 +308,144 @@ function App() {
           WE START TOMORROW
         </Typography>
       </Box>
-      <Box display="flex" justifyContent="space-between" width="100%">
-        <Box
-          display="flex"
-          flexDirection={"column"}
-          justifyContent="center"
-          borderRadius={4}
-          mx={3}
-          my={5}
-          width={"50%"}
-          border={`1px solid ${theme.palette.primary.main}`}
-        >
-          <Typography
-            paddingTop={4}
-            paddingBottom={2}
-            variant="h5"
-            fontWeight={"bold"}
-            textAlign={"center"}
-          >
-            MAINTENANCE & GROWTH
-          </Typography>
-          <Typography variant="caption" textAlign={"center"}>
-            One request at time.
-          </Typography>
-          <Typography variant="caption" textAlign={"center"}>
-            Pause or cancel anytime.
-          </Typography>
-          <Typography
-            marginTop={2}
-            variant="h6"
-            fontWeight={"bold"}
-            textAlign={"center"}
-          >
-            3,000€-8,000€/m
-          </Typography>
+      <Grid container spacing={2} p={1}>
+        <Grid item sm={12} md={6}>
           <Box
-            mt={1}
-            mb={0.5}
             display="flex"
-            width={"100%"}
-            justifyContent={"center"}
+            flexDirection={"column"}
+            justifyContent="center"
+            borderRadius={4}
+            border={`1px solid ${theme.palette.primary.main}`}
           >
-            <Button variant="contained" sx={{ width: 200 }}>
-              get started
-            </Button>
-          </Box>
-          <Box my={1} display="flex" width={"100%"} justifyContent={"center"}>
-            <Link>Book a call</Link>
-          </Box>
-          <Box p={1}>
-            <Typography variant="caption" fontWeight={"bold"}>
-              What's included:
+            <Typography
+              paddingTop={4}
+              paddingBottom={2}
+              variant="h5"
+              fontWeight={"bold"}
+              textAlign={"center"}
+            >
+              MAINTENANCE & GROWTH
             </Typography>
-            <Typography variant="caption">
-              <ul>
-                <li>
-                  <b>One request at a time.</b>
-                </li>
-                <li>Average 2-4 day delivery</li>
-                <li>Signed NDA if necessary</li>
-                <li>Unlimited users</li>
-                <li>24 Hour onboarding</li>
-                <li>1st-Month Satisfaction Guarantee</li>
-                <li>Easy credit-card payments</li>
-                <li>Pause or cancel anytime</li>
-              </ul>
+            <Typography variant="caption" textAlign={"center"}>
+              One request at time.
             </Typography>
+            <Typography variant="caption" textAlign={"center"}>
+              Pause or cancel anytime.
+            </Typography>
+            <Typography
+              marginTop={2}
+              variant="h6"
+              fontWeight={"bold"}
+              textAlign={"center"}
+            >
+              3,000€-8,000€/m
+            </Typography>
+            <Box
+              mt={1}
+              mb={0.5}
+              display="flex"
+              width={"100%"}
+              justifyContent={"center"}
+            >
+              <Button variant="contained" sx={{ width: 200 }}>
+                get started
+              </Button>
+            </Box>
+            <Box my={1} display="flex" width={"100%"} justifyContent={"center"}>
+              <Link>Book a call</Link>
+            </Box>
+            <Box p={1}>
+              <Typography variant="caption" fontWeight={"bold"}>
+                What's included:
+              </Typography>
+              <Typography variant="caption">
+                <ul>
+                  <li>
+                    <b>One request at a time.</b>
+                  </li>
+                  <li>Average 2-4 day delivery</li>
+                  <li>Signed NDA if necessary</li>
+                  <li>Unlimited users</li>
+                  <li>24 Hour onboarding</li>
+                  <li>1st-Month Satisfaction Guarantee</li>
+                  <li>Easy credit-card payments</li>
+                  <li>Pause or cancel anytime</li>
+                </ul>
+              </Typography>
+            </Box>
           </Box>
-        </Box>
-        <Box
-          display="flex"
-          flexDirection={"column"}
-          justifyContent="center"
-          borderRadius={4}
-          mx={3}
-          my={5}
-          width={"50%"}
-          border={`1px solid ${theme.palette.primary.main}`}
-        >
-          <Typography
-            paddingTop={4}
-            paddingBottom={2}
-            variant="h5"
-            fontWeight={"bold"}
-            textAlign={"center"}
-          >
-            E2E DEVELOPMENT
-          </Typography>
-          <Typography variant="caption" textAlign={"center"}>
-            Your product or MVP, built for you, start to finish.
-          </Typography>
-          <Typography variant="caption" textAlign={"center"}>
-            Same Benefits.
-          </Typography>
-          <Typography
-            marginTop={2}
-            variant="h6"
-            fontWeight={"bold"}
-            textAlign={"center"}
-          >
-            Custom
-          </Typography>
+        </Grid>
+        <Grid item sm={12} md={6}>
           <Box
-            mt={1}
-            mb={0.5}
             display="flex"
-            width={"100%"}
-            justifyContent={"center"}
+            flexDirection={"column"}
+            justifyContent="center"
+            borderRadius={4}
+            border={`1px solid ${theme.palette.primary.main}`}
           >
-            <Button variant="contained" sx={{ width: 200 }}>
-              get started
-            </Button>
-          </Box>
-          <Box my={1} display="flex" width={"100%"} justifyContent={"center"}>
-            <Link>Book a call</Link>
-          </Box>
-          <Box p={1}>
-            <Typography variant="caption" fontWeight={"bold"}>
-              What's included:
+            <Typography
+              paddingTop={4}
+              paddingBottom={2}
+              variant="h5"
+              fontWeight={"bold"}
+              textAlign={"center"}
+            >
+              E2E DEVELOPMENT
             </Typography>
-            <Typography variant="caption">
-              <ul>
-                <li>
-                  <b>A dedicated project manager</b>
-                </li>
-                <li>Demos & updates shipped every 1-2 weeks on average</li>
-                <li>Signed NDA if necessary</li>
-                <li>Unlimited users</li>
-                <li>24 Hour onboarding</li>
-                <li>1st-Month Satisfaction Guarantee</li>
-                <li>Easy credit-card payments</li>
-                <li>Pause or cancel anytime</li>
-              </ul>
+            <Typography variant="caption" textAlign={"center"}>
+              Your product or MVP, built for you, start to finish.
             </Typography>
+            <Typography variant="caption" textAlign={"center"}>
+              Same Benefits.
+            </Typography>
+            <Typography
+              marginTop={2}
+              variant="h6"
+              fontWeight={"bold"}
+              textAlign={"center"}
+            >
+              Custom
+            </Typography>
+            <Box
+              mt={1}
+              mb={0.5}
+              display="flex"
+              width={"100%"}
+              justifyContent={"center"}
+            >
+              <Button variant="contained" sx={{ width: 200 }}>
+                get started
+              </Button>
+            </Box>
+            <Box my={1} display="flex" width={"100%"} justifyContent={"center"}>
+              <Link>Book a call</Link>
+            </Box>
+            <Box p={1}>
+              <Typography variant="caption" fontWeight={"bold"}>
+                What's included:
+              </Typography>
+              <Typography variant="caption">
+                <ul>
+                  <li>
+                    <b>A dedicated project manager</b>
+                  </li>
+                  <li>Demos & updates shipped every 1-2 weeks on average</li>
+                  <li>Signed NDA if necessary</li>
+                  <li>Unlimited users</li>
+                  <li>24 Hour onboarding</li>
+                  <li>1st-Month Satisfaction Guarantee</li>
+                  <li>Easy credit-card payments</li>
+                  <li>Pause or cancel anytime</li>
+                </ul>
+              </Typography>
+            </Box>
           </Box>
-        </Box>
-      </Box>
+        </Grid>
+      </Grid>
+
       {/*Have questions?*/}
       <Box
+        id="faqs"
         bgcolor={theme.palette.grey[100]}
         p={5}
         mt={5}
@@ -466,7 +463,6 @@ function App() {
         </Typography>
       </Box>
       {/*FAQs*/}
-      <a href="#faqs" />
       <Box
         mt={5}
         display="flex"
@@ -585,18 +581,20 @@ function App() {
           width="50%"
           height="84%"
         >
-          <HeaderLogo onClick={setTag("home")} />
+          <HeaderLogo onClick={scrollToView("home")} />
           <Box display="flex">
             {/*About*/}
-            <Box mx={2} display="flex" flexDirection={"column"}>
+            <Box mx={1} display="flex" flexDirection={"column"}>
               <Box mb={2}>
-                <Typography variant="button">About</Typography>
+                <Typography variant="button" style={{ fontSize: 12 }}>
+                  About
+                </Typography>
               </Box>
               <Box my={0.6}>
                 <Link
                   color="primary.contrastText"
                   variant="body1"
-                  onClick={setTag("benefits")}
+                  onClick={scrollToView("benefits")}
                 >
                   How it works
                 </Link>
@@ -605,7 +603,7 @@ function App() {
                 <Link
                   color="primary.contrastText"
                   variant="body1"
-                  onClick={setTag("pricing")}
+                  onClick={scrollToView("pricing")}
                 >
                   Pricing
                 </Link>
@@ -614,16 +612,18 @@ function App() {
                 <Link
                   color="primary.contrastText"
                   variant="body1"
-                  onClick={setTag("faqs")}
+                  onClick={scrollToView("faqs")}
                 >
                   FAQs
                 </Link>
               </Box>
             </Box>
             {/*Legal*/}
-            <Box mx={2} display="flex" flexDirection={"column"}>
+            <Box mx={1} display="flex" flexDirection={"column"}>
               <Box mb={2}>
-                <Typography variant="button">Legal</Typography>
+                <Typography variant="button" style={{ fontSize: 12 }}>
+                  Legal
+                </Typography>
               </Box>
               <Box my={0.6}>
                 <Link color="primary.contrastText" variant="body1">
@@ -637,9 +637,11 @@ function App() {
               </Box>
             </Box>
             {/*Company*/}
-            <Box mx={2} display="flex" flexDirection={"column"}>
+            <Box mx={1} display="flex" flexDirection={"column"}>
               <Box mb={2}>
-                <Typography variant="button">Company</Typography>
+                <Typography variant="button" style={{ fontSize: 12 }}>
+                  Company
+                </Typography>
               </Box>
               <Box my={0.6}>
                 <Link color="primary.contrastText" variant="body1">
@@ -653,17 +655,27 @@ function App() {
               </Box>
             </Box>
             {/*Follow Us*/}
-            <Box mx={2} display="flex" flexDirection={"column"}>
+            <Box mx={1} display="flex" flexDirection={"column"}>
               <Box mb={2}>
-                <Typography variant="button">Follow Us</Typography>
+                <Typography variant="button" style={{ fontSize: 12 }}>
+                  Follow Us
+                </Typography>
               </Box>
               <Box my={0.6}>
-                <Link color="primary.contrastText" variant="body1">
+                <Link
+                  href="https://instagram.com/bytestudios.sda"
+                  color="primary.contrastText"
+                  variant="body1"
+                >
                   Instagram
                 </Link>
               </Box>
               <Box my={0.6}>
-                <Link color="primary.contrastText" variant="body1">
+                <Link
+                  href="https://www.linkedin.com/company/bytestudios-sda"
+                  color="primary.contrastText"
+                  variant="body1"
+                >
                   LinkedIn
                 </Link>
               </Box>
