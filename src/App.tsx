@@ -43,9 +43,12 @@ function App() {
         alignItems={"center"}
         justifyContent={"space-between"}
       >
-        <Box p={2} pl={5} id="home">
+        <Box p={2} id="home">
           <Slide direction="right" in={true} timeout={1000}>
-            <Typography sx={{ typography: { sm: "h4", md: "h3", xs: "h4" } }}>
+            <Typography
+              px={5}
+              sx={{ typography: { sm: "h5", md: "h3", xs: "h5" } }}
+            >
               <Box display="flex">
                 <div style={{ opacity: 0.6 }}>We help</div>&nbsp;
                 <b>startups</b>
@@ -67,27 +70,27 @@ function App() {
               </Box>
             </Typography>
           </Slide>
-          <Box mt={3} display="flex">
-            <Grow in={true} timeout={2000}>
-              <Box mr={1}>
-                <Button sx={{ width: 200 }} variant="contained">
+          <Grid container mt={3} spacing={1}>
+            <Grid item sm={12} md={6}>
+              <Grow in={true} timeout={2000}>
+                <Button sx={{ width: "100%" }} variant="contained">
                   Book an intro call
                 </Button>
-              </Box>
-            </Grow>
-            <Grow in={true} timeout={4000}>
-              <Box mx={1}>
+              </Grow>
+            </Grid>
+            <Grid item sm={12} md={6}>
+              <Grow in={true} timeout={4000}>
                 <Button
-                  sx={{ width: 200 }}
+                  sx={{ width: "100%" }}
                   variant="contained"
                   color="inherit"
                   onClick={scrollToView("twist")}
                 >
                   What is the twist?
                 </Button>
-              </Box>
-            </Grow>
-          </Box>
+              </Grow>
+            </Grid>
+          </Grid>
         </Box>
       </Box>
       {/* Benefits */}
