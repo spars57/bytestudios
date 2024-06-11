@@ -20,10 +20,10 @@ const Footer: FC = () => {
         <Grid container spacing={2} p={1} mt={1} display="flex">
           <Grid
             item
-            sm={12}
+            xs={12}
             md={4}
-            width={"100%"}
             display="flex"
+            width={"100%"}
             justifyContent={"center"}
           >
             <HeaderLogo onClick={() => scrollElementToViewById("home")} />
@@ -31,18 +31,32 @@ const Footer: FC = () => {
           {/*About*/}
           <Grid
             item
-            sm={6}
+            xs={6}
             md={4}
             display="flex"
+            width={"100%"}
             justifyContent={"center"}
             flexDirection={"column"}
           >
-            <Box mb={2}>
-              <Typography variant="button" style={{ fontSize: 12 }}>
+            <Box mb={1}>
+              <Typography
+                width={"100%"}
+                display="flex"
+                justifyContent={"center"}
+                textAlign={"center"}
+                variant="button"
+                style={{ fontSize: 12 }}
+              >
                 About
               </Typography>
             </Box>
-            <Box my={0.6}>
+            <Box
+              my={0.6}
+              width={"100%"}
+              display="flex"
+              justifyContent={"center"}
+              textAlign={"center"}
+            >
               <Link
                 color="primary.contrastText"
                 variant="body1"
@@ -51,7 +65,13 @@ const Footer: FC = () => {
                 Pricing
               </Link>
             </Box>
-            <Box my={0.6}>
+            <Box
+              my={0.6}
+              width={"100%"}
+              display="flex"
+              justifyContent={"center"}
+              textAlign={"center"}
+            >
               <Link
                 color="primary.contrastText"
                 variant="body1"
@@ -64,18 +84,30 @@ const Footer: FC = () => {
           {/*Follow Us*/}
           <Grid
             item
-            sm={6}
+            xs={6}
             md={4}
             display="flex"
             justifyContent={"center"}
             flexDirection={"column"}
           >
-            <Box mb={2}>
+            <Box
+              mb={1}
+              width={"100%"}
+              display="flex"
+              justifyContent={"center"}
+              textAlign={"center"}
+            >
               <Typography variant="button" style={{ fontSize: 12 }}>
                 Follow Us
               </Typography>
             </Box>
-            <Box my={0.6}>
+            <Box
+              my={0.6}
+              width={"100%"}
+              display="flex"
+              justifyContent={"center"}
+              textAlign={"center"}
+            >
               <Link
                 href="https://instagram.com/bytestudios.sda"
                 color="primary.contrastText"
@@ -84,7 +116,13 @@ const Footer: FC = () => {
                 Instagram
               </Link>
             </Box>
-            <Box my={0.6}>
+            <Box
+              my={0.6}
+              width={"100%"}
+              display="flex"
+              justifyContent={"center"}
+              textAlign={"center"}
+            >
               <Link
                 href="https://www.linkedin.com/company/bytestudios-sda"
                 color="primary.contrastText"

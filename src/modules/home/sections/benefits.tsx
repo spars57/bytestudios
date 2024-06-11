@@ -11,7 +11,7 @@ import scrollElementToViewById from "../../../utils/scroll-element-to-view";
 const Benefits = () => {
   return (
     <>
-      <Fade in={true} timeout={1000}>
+      <Fade id="benefits" in={true} timeout={1000}>
         <Box
           p={5}
           mt={5}

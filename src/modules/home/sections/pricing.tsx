@@ -67,7 +67,11 @@ const Pricing: FC = () => {
               width={"100%"}
               justifyContent={"center"}
             >
-              <Button variant="contained" sx={{ width: 200 }}>
+              <Button
+                variant="contained"
+                sx={{ width: 200 }}
+                onClick={() => scrollElementToViewById("contact")}
+              >
                 get started
               </Button>
             </Box>
@@ -135,7 +139,11 @@ const Pricing: FC = () => {
               width={"100%"}
               justifyContent={"center"}
             >
-              <Button variant="contained" sx={{ width: 200 }}>
+              <Button
+                variant="contained"
+                sx={{ width: 200 }}
+                onClick={() => scrollElementToViewById("contact")}
+              >
                 get started
               </Button>
             </Box>

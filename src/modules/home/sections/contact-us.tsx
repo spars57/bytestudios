@@ -11,7 +11,7 @@ const ContactUs: FC = () => {
           <Grid item xs={12}>
             <Typography
               mt={5}
-              sx={{ typography: { sm: "h3", md: "h2" } }}
+              sx={{ typography: { sm: "h3", md: "h2", xs: "h3" } }}
               fontWeight={"bold"}
               textAlign={"center"}
               display={"flex"}
