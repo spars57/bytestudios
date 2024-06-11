@@ -604,115 +604,134 @@ function App() {
       >
         <Grid item sm={0} md={2}></Grid>
         <Grid item sm={12} md={8}>
-          <Grid container spacing={2} p={1} mt={1}>
-            <Grid item sm={12} md={4} display="flex" justifyContent={"center"}>
+          <Grid container spacing={2} p={1} mt={1} display="flex">
+            <Grid
+              item
+              sm={12}
+              md={4}
+              width={"100%"}
+              display="flex"
+              justifyContent={"center"}
+            >
               <HeaderLogo onClick={scrollToView("home")} />
             </Grid>
             {/*About*/}
-            <Grid item sm={3} md={2} display="flex" justifyContent={"center"}>
-              <Box mx={1} display="flex" flexDirection={"column"}>
-                <Box mb={2}>
-                  <Typography variant="button" style={{ fontSize: 12 }}>
-                    About
-                  </Typography>
-                </Box>
-                <Box my={0.6}>
-                  <Link
-                    color="primary.contrastText"
-                    variant="body1"
-                    onClick={scrollToView("benefits")}
-                  >
-                    How it works
-                  </Link>
-                </Box>
-                <Box my={0.6}>
-                  <Link
-                    color="primary.contrastText"
-                    variant="body1"
-                    onClick={scrollToView("pricing")}
-                  >
-                    Pricing
-                  </Link>
-                </Box>
-                <Box my={0.6}>
-                  <Link
-                    color="primary.contrastText"
-                    variant="body1"
-                    onClick={scrollToView("faqs")}
-                  >
-                    FAQs
-                  </Link>
-                </Box>
+            <Grid
+              item
+              sm={3}
+              md={2}
+              display="flex"
+              justifyContent={"center"}
+              flexDirection={"column"}
+            >
+              <Box mb={2}>
+                <Typography variant="button" style={{ fontSize: 12 }}>
+                  About
+                </Typography>
+              </Box>
+              <Box my={0.6}>
+                <Link
+                  color="primary.contrastText"
+                  variant="body1"
+                  onClick={scrollToView("pricing")}
+                >
+                  Pricing
+                </Link>
+              </Box>
+              <Box my={0.6}>
+                <Link
+                  color="primary.contrastText"
+                  variant="body1"
+                  onClick={scrollToView("faqs")}
+                >
+                  FAQs
+                </Link>
               </Box>
             </Grid>
             {/*Legal*/}
-            <Grid item sm={3} md={2} display="flex" justifyContent={"center"}>
-              <Box mx={1} display="flex" flexDirection={"column"}>
-                <Box mb={2}>
-                  <Typography variant="button" style={{ fontSize: 12 }}>
-                    Legal
-                  </Typography>
-                </Box>
-                <Box my={0.6}>
-                  <Link color="primary.contrastText" variant="body1">
-                    Terms & Conditions
-                  </Link>
-                </Box>
-                <Box my={0.6}>
-                  <Link color="primary.contrastText" variant="body1">
-                    Data Privacy
-                  </Link>
-                </Box>
+            <Grid
+              item
+              sm={3}
+              md={2}
+              display="flex"
+              justifyContent={"center"}
+              flexDirection={"column"}
+            >
+              <Box mb={2}>
+                <Typography variant="button" style={{ fontSize: 12 }}>
+                  Legal
+                </Typography>
+              </Box>
+              <Box my={0.6}>
+                <Link color="primary.contrastText" variant="body1">
+                  Terms & Conditions
+                </Link>
+              </Box>
+              <Box my={0.6}>
+                <Link color="primary.contrastText" variant="body1">
+                  Data Privacy
+                </Link>
               </Box>
             </Grid>
             {/*Company*/}
-            <Grid item sm={3} md={2} display="flex" justifyContent={"center"}>
-              <Box mx={1} display="flex" flexDirection={"column"}>
-                <Box mb={2}>
-                  <Typography variant="button" style={{ fontSize: 12 }}>
-                    Company
-                  </Typography>
-                </Box>
-                <Box my={0.6}>
-                  <Link color="primary.contrastText" variant="body1">
-                    Support
-                  </Link>
-                </Box>
-                <Box my={0.6}>
-                  <Link color="primary.contrastText" variant="body1">
-                    Press
-                  </Link>
-                </Box>
+            <Grid
+              item
+              sm={3}
+              md={2}
+              display="flex"
+              justifyContent={"center"}
+              flexDirection={"column"}
+            >
+              <Box mb={2}>
+                <Typography variant="button" style={{ fontSize: 12 }}>
+                  Company
+                </Typography>
+              </Box>
+              <Box my={0.6}>
+                <Link color="primary.contrastText" variant="body1">
+                  Support
+                </Link>
+              </Box>
+              <Box my={0.6}>
+                <Link color="primary.contrastText" variant="body1">
+                  Press
+                </Link>
               </Box>
             </Grid>
             {/*Follow Us*/}
-            <Grid item sm={3} md={2} display="flex" justifyContent={"center"}>
-              <Box mx={1} display="flex" flexDirection={"column"}>
-                <Box mb={2}>
-                  <Typography variant="button" style={{ fontSize: 12 }}>
-                    Follow Us
-                  </Typography>
-                </Box>
-                <Box my={0.6}>
-                  <Link
-                    href="https://instagram.com/bytestudios.sda"
-                    color="primary.contrastText"
-                    variant="body1"
-                  >
-                    Instagram
-                  </Link>
-                </Box>
-                <Box my={0.6}>
-                  <Link
-                    href="https://www.linkedin.com/company/bytestudios-sda"
-                    color="primary.contrastText"
-                    variant="body1"
-                  >
-                    LinkedIn
-                  </Link>
-                </Box>
+            <Grid
+              item
+              sm={3}
+              md={2}
+              display="flex"
+              justifyContent={"center"}
+              flexDirection={"column"}
+            >
+              <Box mb={2}>
+                <Typography variant="button" style={{ fontSize: 12 }}>
+                  Follow Us
+                </Typography>
+              </Box>
+              <Box my={0.6}>
+                <Link
+                  href="https://instagram.com/bytestudios.sda"
+                  color="primary.contrastText"
+                  variant="body1"
+                >
+                  Instagram
+                </Link>
+              </Box>
+              <Box my={0.6}>
+                <Link
+                  href="https://www.linkedin.com/company/bytestudios-sda"
+                  color="primary.contrastText"
+                  variant="body1"
+                >
+                  LinkedIn
+                </Link>
               </Box>
             </Grid>
+            {/*Copyright*/}
             <Grid item xs={12} width="100%" display="flex">
               <Typography variant="caption" textAlign={"center"} width={"100%"}>
                 Copyright © 2024 <b>Bytestudios.Ltd.</b>

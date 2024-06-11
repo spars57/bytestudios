@@ -1,4 +1,4 @@
-import { AppBar, Box, Button, Container, Toolbar } from "@mui/material";
+import { AppBar, Box, Container, Toolbar } from "@mui/material";
 import { FC } from "react";
 import HeaderLogo from "../logo";
 
@@ -22,11 +22,11 @@ const Header: FC<HeaderProps> = ({ onImageClick }) => {
               onClick={onImageClick}
               styles={{ overflow: "hidden" }}
             />
-            <Box>
+            {/* <Box>
               <Button variant="outlined" color="secondary">
                 Login
               </Button>
-            </Box>
+            </Box> */}
           </Box>
         </Toolbar>
       </Container>
